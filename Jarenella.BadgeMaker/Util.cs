@@ -1,6 +1,7 @@
 // using System;
 // using System.IO;
 // using System.Collections.Generic;
+using SkiaSharp;
 
 namespace Jarenella.BadgeMaker
 {
@@ -33,6 +34,19 @@ namespace Jarenella.BadgeMaker
                     file.WriteLine(String.Format(template, employees[i].GetId(), employees[i].GetFullName(), employees[i].GetPhotoUrl()));
                 }
             }
+        }
+
+        //MakeBadges method to create badges with employee data
+        async public static Task MakeBadges(List<Employee> employees)
+        {
+            SKImage newIMage = SKImage.FromEncodedData(File.OpenRead("badge.png")); //creates image from path
+            SKData data = newIMage.Encode(); //encodes image data
+            data.SaveTo(File.OpenWrite("data/employeeBadge.png")); //use file.openwrite method to turn path into stream (saveto method requires a stream) to tell program where to save new file
+
+            // for (int i=0; i < employees.Count; i++)
+            // {
+            //     //generate a badge with employee[i]'s info
+            // }
         }
     }
 }

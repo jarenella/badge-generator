@@ -9,6 +9,7 @@ namespace Jarenella.BadgeMaker
             List<Employee> employees = GetEmployees();
             Util.PrintEmployees(employees);
             Util.MakeCSV(employees);
+            Util.MakeBadges(employees);
         }
 
         //getEmployees method
