@@ -2,13 +2,14 @@
 // using System.IO;
 // using System.Collections.Generic;
 
-namespace Jarenella.BadgeMaker{
+namespace Jarenella.BadgeMaker
+{
     class Util
     {
         //printEmployees method
         public static void PrintEmployees(List<Employee> employees)
         {
-            for (int i =0; i < employees.Count; i++)
+            for (int i=0; i < employees.Count; i++)
             {
                 string template = "{0, -10}\t{1, -20}\t{2}";
                 Console.WriteLine(String.Format(template, employees[i].GetId(), employees[i].GetFullName(), employees[i].GetPhotoUrl()));
