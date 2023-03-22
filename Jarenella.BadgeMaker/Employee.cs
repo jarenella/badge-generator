@@ -6,12 +6,14 @@ namespace Jarenella.BadgeMaker
         private string LastName;
         private int Id;
         private string PhotoUrl;
-        public Employee(string firstName, string lastName, int id, string photoUrl)
+        private string CompanyName;
+        public Employee(string firstName, string lastName, int id, string photoUrl, string companyName)
         {
             FirstName = firstName;
             LastName = lastName;
             Id = id;
             PhotoUrl = photoUrl;
+            CompanyName = companyName;
         }
         public string GetFullName()
         {
@@ -23,6 +25,9 @@ namespace Jarenella.BadgeMaker
         }
         public string GetPhotoUrl() {
             return PhotoUrl;
+        }
+        public string GetCompanyName() {
+            return CompanyName;
         }
     }
 }

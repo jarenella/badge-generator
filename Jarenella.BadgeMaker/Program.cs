@@ -4,12 +4,12 @@ namespace Jarenella.BadgeMaker
     class Program
     {
         //main method
-        static void Main(string[] args)
+        async static Task Main(string[] args)
         {
             List<Employee> employees = GetEmployees();
             Util.PrintEmployees(employees);
             Util.MakeCSV(employees);
-            Util.MakeBadges(employees);
+            await Util.MakeBadges(employees);
         }
 
         //getEmployees method
@@ -31,8 +31,10 @@ namespace Jarenella.BadgeMaker
                 int id = Int32.Parse(Console.ReadLine() ?? ""); //parse string to int
                 Console.WriteLine("Please enter a photo URL: ");
                 string photoUrl = Console.ReadLine() ?? "";
+                Console.WriteLine("Please enter a company name: ");
+                string companyName = Console.ReadLine() ?? "";
                 //creates a new employee instance
-                Employee currentEmployee = new Employee(firstName, lastName, id, photoUrl);
+                Employee currentEmployee = new Employee(firstName, lastName, id, photoUrl, companyName);
                 //add the employee to the list of employees
                 employees.Add(currentEmployee);
             }
