@@ -22,7 +22,8 @@ By cloning the repository and starting the .Net application, you will be prompte
 
 # Walkthrough
 
-An example video/walkthrough is coming soon!
+A walkthrough demonstrating the application generating badges based off of randomly generated API data found here:
+https://watch.screencastify.com/v/EN6kU5Y7Ux5iDOKpLfTL
 
 # License
     
